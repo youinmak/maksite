@@ -1,0 +1,7 @@
+com\makrand\view\DefaultView.class
+com\makrand\services\Greeter.class
+com\makrand\services\ViewGreeter.class
+com\makrand\view\UIScopedView.class
+com\makrand\MaksiteApplication.class
+com\makrand\ui\MySiteVaadinUI.class
+com\makrand\view\ViewScopedView.class
