@@ -1,10 +1,13 @@
 package com.makrand.services;
 
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.ViewScope;
+import com.makrand.view.ViewScopedView;
+import com.vaadin.flow.spring.annotation.RouteScope;
+import com.vaadin.flow.spring.annotation.RouteScopeOwner;
+import com.vaadin.flow.spring.annotation.SpringComponent;
 
 @SpringComponent
-@ViewScope
+@RouteScope
+@RouteScopeOwner(ViewScopedView.class)
 public class ViewGreeter {
 
 	public String sayHello(){

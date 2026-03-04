@@ -1,42 +1,19 @@
 package com.makrand.view;
 
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.makrand.services.Greeter;
 import com.makrand.services.ViewGreeter;
-import com.vaadin.navigator.View;
-import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.spring.annotation.SpringView;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
-@SuppressWarnings("serial")
-@SpringView(name=ViewScopedView.VIEW_NAME)
-public class ViewScopedView extends VerticalLayout implements View {
+@Route(value = "view", layout = MainLayout.class)
+@PageTitle("View Scoped View")
+public class ViewScopedView extends VerticalLayout {
 
-	public static final String VIEW_NAME = "view";
-	
-	@Autowired
-	private ViewGreeter viewGreeter;
-	
-	@Autowired
-	private Greeter uiGreeter;
-	
-	@PostConstruct
-	void init(){
-		setMargin(true);
-		setSpacing(true);
-		addComponent(new Label("This is a view scoped view."));
-		addComponent(new Label(viewGreeter.sayHello()));
-		addComponent(new Label(uiGreeter.sayHello()));
+	public ViewScopedView(ViewGreeter viewGreeter, Greeter uiGreeter) {
+		add(new Paragraph("This is a view scoped view."));
+		add(new Paragraph(viewGreeter.sayHello()));
+		add(new Paragraph(uiGreeter.sayHello()));
 	}
-	
-	@Override
-	public void enter(ViewChangeEvent event) {
-		// the view is constructed in the init() method()
-
-	}
-
 }
