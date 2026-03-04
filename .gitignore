@@ -1,0 +1,38 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Maven / Java build output
+target/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Maven wrapper artifacts (this project uses machine-installed Maven)
+.mvn/
+mvnw
+mvnw.cmd
+
+# Vaadin / frontend generated output
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+src/main/frontend/generated/
+
+# Derby embedded database files
+derby.log
+codejava/webdb1/
+
+# Environment / local toolchain files
+.env
+.env.*
+.java-version
