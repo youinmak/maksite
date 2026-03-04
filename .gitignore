@@ -26,7 +26,7 @@ node_modules/
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
-src/main/frontend/generated/
+src/main/frontend/
 
 # Derby embedded database files
 derby.log
