@@ -16,11 +16,13 @@ public class DBUtils {
 		
 		String dbURL1 = "jdbc:derby:codejava/webdb1;create=true";
         
-		try(Connection conn1 = DriverManager.getConnection(dbURL1);) {
-			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");			
-			if (conn1 != null) {
-	            System.out.println("Connected to database #1");
-	        }
+		try {
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			try (Connection conn1 = DriverManager.getConnection(dbURL1)) {
+				if (conn1 != null) {
+		            System.out.println("Connected to database #1");
+		        }
+			}
 		} catch (SQLException | ClassNotFoundException e) {
 			
 			e.printStackTrace();
